@@ -1,0 +1,7 @@
+<h1>Delete Todo</h1>
+<p>Are you sure you want to delete the following todo?</p>
+<p><strong>{{todo.title}}</strong></p>
+<form action="/todos/delete/{{todo._id}}" method="POST">
+  <button type="submit">Yes, Delete</button>
+  <a href="/todos">Cancel</a>
+</form>

@@ -1,0 +1,21 @@
+<h1>Your Todos</h1>
+<ul>
+  {{#each todos}}
+    <li>
+      <strong>{{this.title}}</strong> - {{this.status}}
+      <form action="/todos/edit/{{this._id}}" method="POST">
+        <input type="text" name="title" value="{{this.title}}" required>
+        <textarea name="description">{{this.description}}</textarea>
+        <button type="submit">Edit</button>
+      </form>
+      <form action="/todos/delete/{{this._id}}" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+<form action="/todos/create" method="POST">
+  <input type="text" name="title" placeholder="New Todo" required>
+  <textarea name="description" placeholder="Description"></textarea>
+  <button type="submit">Add</button>
+</form>
