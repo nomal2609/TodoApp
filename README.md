@@ -25,7 +25,7 @@ The application also supports **user registration**. Registered users can **log 
 
 ### **Live Application**  
 Click the link below to explore the app:  
-[**Live Website**](https://news-app-o7n9.onrender.com/news)  
+[**Live Website**](https://todoapp-d5ar.onrender.com)  
 
 You can use the following credentials to log in, or feel free to create your own account:  
 Default Login: nomal
