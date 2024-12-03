@@ -39,7 +39,8 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 0 15px;
+  margin: 0.5rem 15px;
+  padding: 0.5rem 1rem;
 }
 
 header nav ul li a {
