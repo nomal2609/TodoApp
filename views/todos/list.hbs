@@ -1,4 +1,6 @@
-<h1 class="todo-header">Your Todos</h1>
+<span id="h1">
+  <h1 class="todo-header">Your Todos</h1>
+</span>
 
 <ul class="todo-view">
   {{#each todos}}
@@ -6,16 +8,17 @@
       <div class="todo-content">
         <strong>{{this.title}}</strong>
         <p>{{this.description}}</p>
-        <span class="status">{{this.status}}</span>
       </div>
       <div class="todo-actions">
-        <form action="/todos/edit/{{this._id}}" method="POST" class="todo-form">
+        <form action="/todos/edit/{{this._id}}" method="POST" class="todo-form todo-content">
           <input type="text" name="title" value="{{this.title}}" placeholder="Edit Title" required>
           <textarea name="description" placeholder="Edit Description">{{this.description}}</textarea>
+          <span class="only-buttons">
           <button type="submit" class="btn btn-edit">Edit</button>
         </form>
-        <form action="/todos/delete/{{this._id}}" method="POST" class="todo-form">
+        <form action="/todos/delete/{{this._id}}" method="POST" class="todo-form todo-delete">
           <button type="submit" class="btn btn-delete">Delete</button>
+          </span>
         </form>
       </div>
     </li>

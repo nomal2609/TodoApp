@@ -3,8 +3,30 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   </head>
+  
   <body>
-    {{{body}}}
+    <header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/" class="navbar-logo">TodoApp</a>
+          <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/users/register">Register</a></li>
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/todos">ToDos</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      {{{body}}}
+    </main>
+
+    <footer>
+      Copyright &copy; 2024 | <span>ToDoApp</span> | All rights reserved.
+    </footer>
   </body>
 </html>

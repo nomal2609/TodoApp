@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoApp</title>
-    <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Ensure your CSS is linked properly -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Optional: Google Fonts -->
 </head>
-<body> 
+<body>
+  <!-- Navbar -->
+  
 
-    <!-- Main content (this will change based on routes) -->
-    <div class="main-content">
-        {{{body}}}
-    </div>
+  <!-- Page-specific content -->
+  <div class="main-content">
+    {{body}}
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 TodoApp | All Rights Reserved</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 TodoApp. All rights reserved.</p>
+  </footer>
 </body>
 </html>

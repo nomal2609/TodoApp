@@ -1,13 +1,18 @@
 /* General Styles */
-body {
+* {
   font-family: 'Arial', sans-serif;
+}
+
+body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
   color: #333;
   line-height: 1.6;
-  width: 30%;
-  margin: auto;   
+  /* width: 30%;
+  margin: auto;    */
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -56,12 +61,13 @@ footer {
 
 /* Main Styles */
 main {
+  text-align: center;
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 5rem auto;
   padding: 1rem;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 8px;  
 }
 
 /* Form Styles */
@@ -166,4 +172,149 @@ p {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.navbar-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #ccc;
+}
+
+nav li {
+  background: rgb(0, 123, 255);
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 0;
+}
+
+/* Main Content Section */
+.main-content {
+  padding-top: 60px; /* Adjusts content position below navbar */
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 50px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer span {
+  cursor: pointer;
+  color: rgb(0, 123, 255);
+  transition: all 0.35s ease;
+}
+
+footer span:hover {
+  color: rgb(189, 219, 250);
+}
+
+/* Todo Display Only */
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.todo-view {
+  width: 30rem;
+}
+
+.todo-view form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-view button {
+  width: 5rem;
+}
+
+.todo-view input, .todo-view textarea {
+  width: 80%;
+}
+
+textarea {
+  resize: none;
+  height: 10rem;
+}
+
+.only-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.todo-content {
+  min-width: 30rem !important;
+  text-align: center; 
+}
+
+.todo-content strong {
+  font-size: 1.5rem;
+}
+
+.todo-delete {
+  margin: 0;
+}
+
+
+.login, .register {
+  text-align: left;
+}
+
+p {
+  padding: 0 2rem;
 }

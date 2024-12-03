@@ -1,20 +1,42 @@
+require('dotenv').config();
 const express = require('express');
-const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
+require('./config/db');
+require('./config/passport')(passport);
 
-// Set up Handlebars
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'views'));
-
-// Use the routes
 const indexRouter = require('./routes/index');
-app.use('/', indexRouter);
+const usersRouter = require('./routes/users');
+const todosRouter = require('./routes/todos');
 
-// Serve static files (like CSS)
+const app = express();
+
+// View engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
+// Middleware
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// Routes
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/todos', todosRouter);
+
+module.exports = app;
